@@ -1,8 +1,7 @@
-package com.bezkoder.spring.jpa.h2;
+package com.vicky.spring.jpa.h2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 public class SpringBootJpaH2Application {
