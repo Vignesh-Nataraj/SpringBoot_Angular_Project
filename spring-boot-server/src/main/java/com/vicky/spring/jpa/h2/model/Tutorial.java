@@ -1,6 +1,6 @@
 package com.vicky.spring.jpa.h2.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tutorials")
