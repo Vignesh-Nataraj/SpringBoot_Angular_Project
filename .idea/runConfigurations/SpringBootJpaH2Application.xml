@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="SpringBootJpaH2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="spring-boot-jpa-h2" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.vicky.spring.jpa.h2.SpringBootJpaH2Application" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
