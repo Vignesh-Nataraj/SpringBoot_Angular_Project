@@ -1,0 +1,16 @@
+services:
+  accounts:
+    image: "jithinsankarm/vignesh:v1"
+    container_name: vignesh-ms
+    ports:
+      - "8095:8095"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - ournetwork
+
+networks:
+  ournetwork:
+    driver: "bridge"
