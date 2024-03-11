@@ -122,4 +122,8 @@ public class TutorialController {
 		}
 	}
 
+	@GetMapping("/health")
+	public String checkHealth(){
+		return "Im up";
+	}
 }
