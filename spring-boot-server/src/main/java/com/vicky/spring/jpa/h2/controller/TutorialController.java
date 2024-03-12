@@ -6,6 +6,12 @@ import java.util.Optional;
 
 import com.vicky.spring.jpa.h2.model.Tutorial;
 import com.vicky.spring.jpa.h2.repository.TutorialRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +26,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(
+		name = "CRUD REST APIs for Tutorials",
+		description = "CRUD REST APIs in Tutorials App to CREATE, UPDATE, FETCH AND DELETE tutorial details"
+)
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
@@ -27,6 +37,25 @@ public class TutorialController {
 
 	@Autowired
 	TutorialRepository tutorialRepository;
+
+	@Operation(
+			summary = "Get Tutorials REST API",
+			description = "REST API to get all Tutorials"
+	)
+	@ApiResponses({
+			@ApiResponse(
+					responseCode = "201",
+					description = "HTTP Status Ok"
+			),
+			@ApiResponse(
+					responseCode = "500",
+					description = "HTTP Status Internal Server Error",
+					content = @Content(
+							schema = @Schema(implementation = Error.class)
+					)
+			)
+	}
+	)
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/tutorials")
 	public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {

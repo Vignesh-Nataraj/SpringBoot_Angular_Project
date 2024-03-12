@@ -1,13 +1,13 @@
 services:
   accounts:
-    image: "jithinsankarm/vignesh:v1"
+    image: "jithinsankarm/vignesh:v1" #Docker image name to be changed as required
     container_name: vignesh-ms
     ports:
-      - "8095:8095"
+      - "8095:8095" #Ports to be changed as required
     deploy:
       resources:
         limits:
-          memory: 700m
+          memory: 700m #Maximum memory allowed for the application
     networks:
       - ournetwork
 
