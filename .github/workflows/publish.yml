@@ -26,7 +26,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-         working-directory:https://github.com/Vignesh-Nataraj/SpringBoot_Angular_Project/blob/b0a9aaa24fa5ccc1dda3cc0675773a995ef7fe87/spring-boot-server/pom.xml
+         working-directory:/spring-boot-server
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
