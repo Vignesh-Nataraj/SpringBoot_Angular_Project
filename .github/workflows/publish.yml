@@ -33,8 +33,13 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Generate package-lock.json
+        run: npm install
+        working-directory: ./angular-15-client
+
       - name: Install dependencies
         run: npm ci
+
 
       - name: Build Angular app
         run: npm run build -- --output-path=./dist/out --configuration ${{ matrix.configuration }}
