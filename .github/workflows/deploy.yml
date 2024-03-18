@@ -25,6 +25,12 @@ jobs:
         run: mvn clean install
         working-directory: ./spring-boot-server
 
+      - name: Archive war artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: backend
+          path: ./spring-boot-server/target/*.war
+
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -53,6 +59,7 @@ jobs:
           set -e
           {
             aws s3 sync ./angular-15-client/dist/out/ s3://springbootangularproject
+            aws s3 cp ./spring-boot-server/target/*.war s3://springbootangularproject
           } || {
             echo "AWS command failed with exit code $?"
             exit 1
