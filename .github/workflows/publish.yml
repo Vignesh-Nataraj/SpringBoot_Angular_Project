@@ -41,12 +41,9 @@ jobs:
         run: npm ci
         working-directory: ./angular-15-client
 
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-        working-directory: ./angular-15-client
 
       - name: Build Angular app
-        run: ng build --prod --output-path=./dist/out
+        run: npm run build -- --output-path=./dist/out --configuration ${{ matrix.configuration }}
         working-directory: ./angular-15-client
 
       - name: Archive production artifacts
