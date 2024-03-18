@@ -55,7 +55,7 @@ jobs:
         working-directory: ./angular-15-client
 
       - name: Build Angular app
-        run: ng build --prod --output-path=./dist/out
+        run: ng build --configuration production --output-path=./dist/out
         working-directory: ./angular-15-client
 
       - name: Archive production artifacts
