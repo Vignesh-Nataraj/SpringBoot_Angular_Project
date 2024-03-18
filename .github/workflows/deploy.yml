@@ -52,5 +52,5 @@ jobs:
         run: |
           aws s3 sync ./angular-15-client/dist/out/ s3://springbootangularproject
         env:
-          AWS_ACCESS_KEY_ID: ${{ AKIA226ZCSQVDCZMZH4Z }}
-          AWS_SECRET_ACCESS_KEY: ${{ 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 }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
