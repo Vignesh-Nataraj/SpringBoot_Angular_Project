@@ -65,7 +65,7 @@ jobs:
           set -e
           {
             aws s3 sync ./angular-15-client/dist/out/ s3://springbootangularproject
-            aws s3 cp ./spring-boot-server/target/*.war s3://springbootangularproject
+            aws s3 cp ./spring-boot-server/target/*.jar s3://springbootangularproject
           } || {
             echo "AWS command failed with exit code $?"
             exit 1
