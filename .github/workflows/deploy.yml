@@ -98,4 +98,4 @@ jobs:
           script: |
             echo -e "${{ secrets.AWS_ACCESS_KEY_ID }}\n${{ secrets.AWS_SECRET_ACCESS_KEY }}\n${{ secrets.AWS_DEFAULT_REGION }}\n\n" | aws configure
             aws s3 cp s3://springbootangularproject/spring-boot-docker.jar ~/spring-boot-server/target/
-            java -jar ~/spring-boot-server/target/spring-boot-docker.jar
+            nohup java -jar ~/spring-boot-server/target/spring-boot-docker.jar &
