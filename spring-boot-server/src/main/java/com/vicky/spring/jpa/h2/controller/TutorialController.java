@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 		name = "CRUD REST APIs for Tutorials",
 		description = "CRUD REST APIs in Tutorials App to CREATE, UPDATE, FETCH AND DELETE tutorial details"
 )
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = {"http://localhost:8081", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 @RestController
 @RequestMapping("/api")
 public class TutorialController {
@@ -56,7 +56,7 @@ public class TutorialController {
 			)
 	}
 	)
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@GetMapping("/tutorials")
 	public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
 		try {
@@ -76,7 +76,7 @@ public class TutorialController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@GetMapping("/tutorials/{id}")
 	public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") long id) {
 		Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -87,7 +87,7 @@ public class TutorialController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@PostMapping("/tutorials")
 	public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
 		try {
@@ -98,7 +98,7 @@ public class TutorialController {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@PutMapping("/tutorials/{id}")
 	public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") long id, @RequestBody Tutorial tutorial) {
 		Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -114,7 +114,7 @@ public class TutorialController {
 		}
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@DeleteMapping("/tutorials/{id}")
 	public ResponseEntity<HttpStatus> deleteTutorial(@PathVariable("id") long id) {
 		try {
@@ -125,7 +125,7 @@ public class TutorialController {
 		}
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@DeleteMapping("/tutorials")
 	public ResponseEntity<HttpStatus> deleteAllTutorials() {
 		try {
@@ -136,7 +136,7 @@ public class TutorialController {
 		}
 
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://springbootangularproject.s3-website.ap-south-1.amazonaws.com:8080"})
 	@GetMapping("/tutorials/published")
 	public ResponseEntity<List<Tutorial>> findByPublished() {
 		try {
