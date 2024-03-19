@@ -87,7 +87,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             sudo yum update -y
-            sudo yum install java-17-amazon-corretto
+            sudo yum install -y java-17-amazon-corretto
 
       - name: Run JAR on EC2
         uses: appleboy/ssh-action@master
