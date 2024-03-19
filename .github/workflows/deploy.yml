@@ -96,4 +96,5 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            aws s3 cp s3://springbootangularproject/spring-boot-docker.jar ~/spring-boot-server/target/
             java -jar ~/spring-boot-server/target/spring-boot-docker.jar
