@@ -87,7 +87,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             sudo yum update -y
-            sudo amazon-linux-extras install -y java-openjdk17
+            sudo yum install -y java-17-openjdk
 
       - name: Run JAR on EC2
         uses: appleboy/ssh-action@master
