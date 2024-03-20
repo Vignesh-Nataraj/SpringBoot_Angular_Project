@@ -102,4 +102,4 @@ jobs:
             echo -e "${{ secrets.AWS_ACCESS_KEY_ID }}\n${{ secrets.AWS_SECRET_ACCESS_KEY }}\n${{ secrets.AWS_DEFAULT_REGION }}\n\n" | aws configure
             aws s3 cp s3://springbootangularproject/spring-boot-docker.jar ~/spring-boot-server/target/
             ~/spring-boot-server/shutdown.sh
-            ~/spring-boot-server/startup.sh
+            DB_USERNAME=${{ secrets.DB_USERNAME }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} ~/spring-boot-server/startup.sh
