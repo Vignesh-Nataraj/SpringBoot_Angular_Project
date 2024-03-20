@@ -11,6 +11,9 @@ jobs:
     strategy:
       matrix:
         configuration: [production]
+    env:
+      DB_USERNAME: ${{ secrets.DB_USERNAME }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
